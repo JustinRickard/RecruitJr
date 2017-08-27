@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecruitJr.Core", "RecruitJr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecruitJr.DAL.MongoDB", "RecruitJr.DAL.MongoDB\RecruitJr.DAL.MongoDB.csproj", "{F0B3BBED-21E1-4F91-94D6-0F9F1CBD7DF5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecruitJr.DB.Seed.Common", "RecruitJr.DB.Seed.Common\RecruitJr.DB.Seed.Common.csproj", "{9647FCAF-7760-42B6-B6E7-9592706AF7A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{F0B3BBED-21E1-4F91-94D6-0F9F1CBD7DF5}.Release|x64.Build.0 = Release|x64
 		{F0B3BBED-21E1-4F91-94D6-0F9F1CBD7DF5}.Release|x86.ActiveCfg = Release|x86
 		{F0B3BBED-21E1-4F91-94D6-0F9F1CBD7DF5}.Release|x86.Build.0 = Release|x86
+		{9647FCAF-7760-42B6-B6E7-9592706AF7A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9647FCAF-7760-42B6-B6E7-9592706AF7A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9647FCAF-7760-42B6-B6E7-9592706AF7A8}.Debug|x64.ActiveCfg = Debug|x64
+		{9647FCAF-7760-42B6-B6E7-9592706AF7A8}.Debug|x64.Build.0 = Debug|x64
+		{9647FCAF-7760-42B6-B6E7-9592706AF7A8}.Debug|x86.ActiveCfg = Debug|x86
+		{9647FCAF-7760-42B6-B6E7-9592706AF7A8}.Debug|x86.Build.0 = Debug|x86
+		{9647FCAF-7760-42B6-B6E7-9592706AF7A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9647FCAF-7760-42B6-B6E7-9592706AF7A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9647FCAF-7760-42B6-B6E7-9592706AF7A8}.Release|x64.ActiveCfg = Release|x64
+		{9647FCAF-7760-42B6-B6E7-9592706AF7A8}.Release|x64.Build.0 = Release|x64
+		{9647FCAF-7760-42B6-B6E7-9592706AF7A8}.Release|x86.ActiveCfg = Release|x86
+		{9647FCAF-7760-42B6-B6E7-9592706AF7A8}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 EndGlobal
