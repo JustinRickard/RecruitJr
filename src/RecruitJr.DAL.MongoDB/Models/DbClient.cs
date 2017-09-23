@@ -1,6 +1,6 @@
-using Common.Dto;
+using RecruitJr.Core.Dto;
 
-namespace DAL.MongoDB.Models
+namespace RecruitJr.DAL.MongoDB.Models
 {
     public class DbClient : DbRecordBase
     {

@@ -1,9 +1,9 @@
 using System;
 using MongoDB.Bson;
-using DAL.MongoDB.Interfaces;
+using RecruitJr.DAL.MongoDB.Interfaces;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace DAL.MongoDB
+namespace RecruitJr.DAL.MongoDB
 {
     public abstract class DbRecordBase : IDbRecord
     {

@@ -1,4 +1,4 @@
-namespace Common.Dto
+namespace RecruitJr.Core.Dto
 {
     public class ClientSettings
     {

@@ -1,15 +1,15 @@
 using System.Threading.Tasks;
 using System.Collections.Generic;
-using Common.Interfaces.Repositories;
-using Common.Interfaces.Services;
-using Common.Dto;
-using Common.Classes;
-using Common.Enums;
-using Common.Interfaces.Helpers;
+using RecruitJr.Core.Interfaces.Repositories;
+using RecruitJr.Core.Interfaces.Services;
+using RecruitJr.Core.Dto;
+using RecruitJr.Core.Classes;
+using RecruitJr.Core.Enums;
+using RecruitJr.Core.Interfaces.Helpers;
 using System.Threading;
-using Common.ExtensionMethods;
+using RecruitJr.Core.ExtensionMethods;
 
-namespace Common.Services
+namespace RecruitJr.Core.Services
 {
     public class UserService : ServiceBase, IUserService
     {

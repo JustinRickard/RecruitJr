@@ -1,6 +1,6 @@
 using System;
 
-namespace Common.ExtensionMethods
+namespace RecruitJr.Core.ExtensionMethods
 {
     public static class StringExtensions
     {

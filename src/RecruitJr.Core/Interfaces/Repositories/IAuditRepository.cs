@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Common.Dto;
-using Common.Enums;
-using Common.SearchFilters;
+using RecruitJr.Core.Dto;
+using RecruitJr.Core.Enums;
+using RecruitJr.Core.SearchFilters;
 
-namespace Common.Interfaces.Repositories
+namespace RecruitJr.Core.Interfaces.Repositories
 {
     public interface IAuditRepository
     {

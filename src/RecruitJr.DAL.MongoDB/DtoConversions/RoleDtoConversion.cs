@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
-using Common.Dto;
-using DAL.MongoDB.Models;
+using RecruitJr.Core.Dto;
+using RecruitJr.DAL.MongoDB.Models;
 using MongoDB.Bson;
 
-namespace DAL.MongoDB.DtoConversions
+namespace RecruitJr.DAL.MongoDB.DtoConversions
 {
     public static class RoleDtoConversion
     {

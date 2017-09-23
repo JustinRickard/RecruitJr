@@ -1,7 +1,7 @@
 using System;
-using Common.Enums;
+using RecruitJr.Core.Enums;
 
-namespace Common.SearchFilters
+namespace RecruitJr.Core.SearchFilters
 {
     public class AuditFilter
     {

@@ -1,18 +1,18 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Common.Classes;
-using Common.Dto;
-using Common.Interfaces.Repositories;
-using DAL.MongoDB.DtoConversions;
-using DAL.MongoDB.Interfaces;
-using DAL.MongoDB.Models;
+using RecruitJr.Core.Classes;
+using RecruitJr.Core.Dto;
+using RecruitJr.Core.Interfaces.Repositories;
+using RecruitJr.DAL.MongoDB.DtoConversions;
+using RecruitJr.DAL.MongoDB.Interfaces;
+using RecruitJr.DAL.MongoDB.Models;
 using Microsoft.Extensions.Options;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.Linq;
 
-namespace DAL.MongoDB.Repositories
+namespace RecruitJr.DAL.MongoDB.Repositories
 {
     public class RoleRepository : RepositoryBase, IRoleRepository
     {

@@ -1,4 +1,4 @@
-namespace Common
+namespace RecruitJr.Core
 {
     public static class Constants
     {

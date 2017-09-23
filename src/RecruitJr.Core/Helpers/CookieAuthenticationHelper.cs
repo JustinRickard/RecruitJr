@@ -1,7 +1,7 @@
 // using System.Security.Claims;
-using Common.Dto;
+using RecruitJr.Core.Dto;
 
-namespace Common.Helpers
+namespace RecruitJr.Core.Helpers
 {
     public class CookieAuthenticationHelper
     {

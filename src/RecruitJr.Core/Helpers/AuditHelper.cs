@@ -1,10 +1,10 @@
 using System;
 using System.Threading.Tasks;
-using Common.Enums;
-using Common.Interfaces.Helpers;
-using Common.Interfaces.Repositories;
+using RecruitJr.Core.Enums;
+using RecruitJr.Core.Interfaces.Helpers;
+using RecruitJr.Core.Interfaces.Repositories;
 
-namespace Common.Helpers
+namespace RecruitJr.Core.Helpers
 {
     public class AuditHelper : IAuditHelper
     {

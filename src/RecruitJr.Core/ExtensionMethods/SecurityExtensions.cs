@@ -1,9 +1,9 @@
-using Common.Classes;
+using RecruitJr.Core.Classes;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 
-namespace Common.ExtensionMethods
+namespace RecruitJr.Core.ExtensionMethods
 {
     public static class SecurityExtensions
     {

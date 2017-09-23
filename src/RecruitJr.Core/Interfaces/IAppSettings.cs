@@ -1,4 +1,4 @@
-namespace Common.Interfaces
+namespace RecruitJr.Core.Interfaces
 {
     public interface IAppSettings
     {

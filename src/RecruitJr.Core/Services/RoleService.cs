@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Common.Classes;
-using Common.Dto;
-using Common.Enums;
-using Common.Interfaces.Repositories;
-using Common.Interfaces.Services;
+using RecruitJr.Core.Classes;
+using RecruitJr.Core.Dto;
+using RecruitJr.Core.Enums;
+using RecruitJr.Core.Interfaces.Repositories;
+using RecruitJr.Core.Interfaces.Services;
 
-namespace Common.Services
+namespace RecruitJr.Core.Services
 {
     public class RoleService : IRoleService
     {

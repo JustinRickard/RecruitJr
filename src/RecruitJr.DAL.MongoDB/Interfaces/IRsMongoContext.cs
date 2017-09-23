@@ -1,7 +1,7 @@
 using MongoDB.Driver;
-using DAL.MongoDB.Models;
+using RecruitJr.DAL.MongoDB.Models;
 
-namespace DAL.MongoDB.Interfaces
+namespace RecruitJr.DAL.MongoDB.Interfaces
 {
     public interface IRsMongoContext
     {

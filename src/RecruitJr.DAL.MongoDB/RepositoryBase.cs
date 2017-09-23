@@ -3,19 +3,19 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.Core;
 using MongoDB.Driver.Linq;
-using Common.Interfaces;
-using Common.Classes;
-using DAL.MongoDB.Interfaces;
-using DAL.MongoDB;
+using RecruitJr.Core.Interfaces;
+using RecruitJr.Core.Classes;
+using RecruitJr.DAL.MongoDB.Interfaces;
+using RecruitJr.DAL.MongoDB;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System;
-using Common.Interfaces.Repositories;
-using DAL.MongoDB.Models;
-using Common.Enums;
+using RecruitJr.Core.Interfaces.Repositories;
+using RecruitJr.DAL.MongoDB.Models;
+using RecruitJr.Core.Enums;
 
-namespace DAL.MongoDB
+namespace RecruitJr.DAL.MongoDB
 {
     public class RepositoryBase
     {

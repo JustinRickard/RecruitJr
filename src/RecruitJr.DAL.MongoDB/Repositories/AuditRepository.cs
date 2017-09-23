@@ -1,18 +1,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Common.Classes;
-using Common.Dto;
-using Common.Enums;
-using Common.Interfaces.Repositories;
-using Common.SearchFilters;
-using DAL.MongoDB.DtoConversions;
-using DAL.MongoDB.Models;
+using RecruitJr.Core.Classes;
+using RecruitJr.Core.Dto;
+using RecruitJr.Core.Enums;
+using RecruitJr.Core.Interfaces.Repositories;
+using RecruitJr.Core.SearchFilters;
+using RecruitJr.DAL.MongoDB.DtoConversions;
+using RecruitJr.DAL.MongoDB.Models;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using MongoDB.Driver.Linq;
 
-namespace DAL.MongoDB.Repositories
+namespace RecruitJr.DAL.MongoDB.Repositories
 {
     public class AuditRepository : RepositoryBase, IAuditRepository
     {

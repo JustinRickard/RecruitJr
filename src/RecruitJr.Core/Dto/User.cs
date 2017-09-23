@@ -1,9 +1,9 @@
 using System;
-using Common.Classes;
-using Common.Enums;
-using Common.ExtensionMethods;
+using RecruitJr.Core.Classes;
+using RecruitJr.Core.Enums;
+using RecruitJr.Core.ExtensionMethods;
 
-namespace Common.Dto
+namespace RecruitJr.Core.Dto
 {
     public class User : DbRecordBase
     {

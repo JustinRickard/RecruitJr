@@ -1,4 +1,4 @@
-namespace Common.Interfaces.Helpers
+namespace RecruitJr.Core.Interfaces.Helpers
 {
     public interface IPasswordHelper
     {

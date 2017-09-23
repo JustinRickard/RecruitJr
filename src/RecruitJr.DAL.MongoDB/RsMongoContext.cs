@@ -2,16 +2,16 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.Core;
 using MongoDB.Driver.Linq;
-using Common.Dto;
-using Common.Interfaces;
-using Common.Classes;
-using DAL.MongoDB.Interfaces;
-using DAL.MongoDB.Models;
+using RecruitJr.Core.Dto;
+using RecruitJr.Core.Interfaces;
+using RecruitJr.Core.Classes;
+using RecruitJr.DAL.MongoDB.Interfaces;
+using RecruitJr.DAL.MongoDB.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DAL.MongoDB
+namespace RecruitJr.DAL.MongoDB
 {
     public class RsMongoContext : IDisposable, IRsMongoContext
     {

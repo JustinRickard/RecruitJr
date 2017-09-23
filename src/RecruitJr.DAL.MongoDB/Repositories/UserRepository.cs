@@ -7,20 +7,20 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Common.Interfaces.Repositories;
-using Common.Dto;
-using Common.Classes;
-using DAL.MongoDB.DtoConversions;
-using DAL.MongoDB;
-using DAL.MongoDB.Models;
-using DAL.MongoDB.Interfaces;
-using Common.Interfaces.Helpers;
-using Common.SearchFilters;
-using Common.ExtensionMethods;
+using RecruitJr.Core.Interfaces.Repositories;
+using RecruitJr.Core.Dto;
+using RecruitJr.Core.Classes;
+using RecruitJr.DAL.MongoDB.DtoConversions;
+using RecruitJr.DAL.MongoDB;
+using RecruitJr.DAL.MongoDB.Models;
+using RecruitJr.DAL.MongoDB.Interfaces;
+using RecruitJr.Core.Interfaces.Helpers;
+using RecruitJr.Core.SearchFilters;
+using RecruitJr.Core.ExtensionMethods;
 using System.Threading;
-using Common.Enums;
+using RecruitJr.Core.Enums;
 
-namespace DAL.MongoDB.Repositories
+namespace RecruitJr.DAL.MongoDB.Repositories
 {
     public class UserRepository : RepositoryBase, IUserRepository
     {

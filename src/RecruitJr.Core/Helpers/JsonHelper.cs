@@ -1,10 +1,10 @@
-using Common.Classes;
-using Common.Enums;
-using Common.Interfaces.Helpers;
+using RecruitJr.Core.Classes;
+using RecruitJr.Core.Enums;
+using RecruitJr.Core.Interfaces.Helpers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace Common.Helpers
+namespace RecruitJr.Core.Helpers
 {
     public class JsonHelper : IJsonHelper
     {

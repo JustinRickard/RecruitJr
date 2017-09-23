@@ -1,7 +1,7 @@
-using Common.Classes;
-using Common.Enums;
+using RecruitJr.Core.Classes;
+using RecruitJr.Core.Enums;
 
-namespace Common.Dto
+namespace RecruitJr.Core.Dto
 {
     public class Audit : DbRecordBase
     {

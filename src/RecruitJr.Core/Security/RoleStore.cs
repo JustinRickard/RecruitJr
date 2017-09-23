@@ -1,12 +1,12 @@
 using System.Threading;
 using System.Threading.Tasks;
-using Common.Classes;
-using Common.Dto;
-using Common.ExtensionMethods;
-using Common.Interfaces.Services;
+using RecruitJr.Core.Classes;
+using RecruitJr.Core.Dto;
+using RecruitJr.Core.ExtensionMethods;
+using RecruitJr.Core.Interfaces.Services;
 using Microsoft.AspNetCore.Identity;
 
-namespace Common.Security
+namespace RecruitJr.Core.Security
 {
     public class RoleStore : IRoleStore<Role>
     {   

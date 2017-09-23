@@ -1,6 +1,6 @@
-using Common.Classes;
+using RecruitJr.Core.Classes;
 
-namespace Common.Interfaces.Helpers
+namespace RecruitJr.Core.Interfaces.Helpers
 {
     public interface IJsonHelper
     {

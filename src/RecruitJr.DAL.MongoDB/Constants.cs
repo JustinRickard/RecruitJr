@@ -1,4 +1,4 @@
-namespace DAL.MongoDB
+namespace RecruitJr.DAL.MongoDB
 {
     public static class Constants
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace Common.Classes
+namespace RecruitJr.Core.Classes
 {
     public class Maybe<T>
     {

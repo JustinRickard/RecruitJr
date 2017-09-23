@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace DAL.MongoDB.Classes
+namespace RecruitJr.DAL.MongoDB.Classes
 {
     public class DbResult
     {

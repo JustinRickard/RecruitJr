@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Common.Dto
+namespace RecruitJr.Core.Dto
 {
     public class UserSettings
     {

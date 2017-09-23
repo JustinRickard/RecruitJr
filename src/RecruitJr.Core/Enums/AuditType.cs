@@ -1,4 +1,4 @@
-namespace Common.Enums
+namespace RecruitJr.Core.Enums
 {
     public enum AuditType
     {

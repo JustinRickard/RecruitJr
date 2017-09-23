@@ -1,6 +1,6 @@
-using Common.Classes;
-using Common.Interfaces.Helpers;
-using Common.Interfaces.Repositories;
+using RecruitJr.Core.Classes;
+using RecruitJr.Core.Interfaces.Helpers;
+using RecruitJr.Core.Interfaces.Repositories;
 
 namespace DB.Seed.Common.Seeders
 {

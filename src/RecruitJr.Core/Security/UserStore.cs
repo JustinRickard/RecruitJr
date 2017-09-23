@@ -1,18 +1,18 @@
 using System.Threading.Tasks;
-using Common.Interfaces.Services;
+using RecruitJr.Core.Interfaces.Services;
 using Microsoft.AspNetCore.Identity;
 using System.Threading;
-using Common.Dto;
-using Common.ExtensionMethods;
-using Common.Interfaces.Repositories;
-using Common.Interfaces.Helpers;
-using Common.Services;
-using Common.Enums;
-using Common.Classes;
-using Keycodes = Common.Constants.Resources.Keycodes.UserStore;
+using RecruitJr.Core.Dto;
+using RecruitJr.Core.ExtensionMethods;
+using RecruitJr.Core.Interfaces.Repositories;
+using RecruitJr.Core.Interfaces.Helpers;
+using RecruitJr.Core.Services;
+using RecruitJr.Core.Enums;
+using RecruitJr.Core.Classes;
+using Keycodes = RecruitJr.Core.Constants.Resources.Keycodes.UserStore;
 using System;
 
-namespace Common.Security
+namespace RecruitJr.Core.Security
 {
     public class UserStore : ServiceBase, IUserStore<User>, IUserPasswordStore<User> //, IUserLoginStore<User>
     {

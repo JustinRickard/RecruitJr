@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
-using Common.Enums;
+using RecruitJr.Core.Enums;
 
-namespace Common.Interfaces.Helpers
+namespace RecruitJr.Core.Interfaces.Helpers
 {
     public interface IAuditHelper
     {

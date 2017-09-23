@@ -1,4 +1,4 @@
-namespace DAL.MongoDB.Models
+namespace RecruitJr.DAL.MongoDB.Models
 {
     public class DbRole : DbRecordBase
     {

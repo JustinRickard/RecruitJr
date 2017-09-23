@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Common.Classes;
-using Common.Dto;
+using RecruitJr.Core.Classes;
+using RecruitJr.Core.Dto;
 
-namespace Common.Interfaces.Repositories
+namespace RecruitJr.Core.Interfaces.Repositories
 {
     public interface IRoleRepository
     {

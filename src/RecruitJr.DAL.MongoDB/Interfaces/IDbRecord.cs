@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DAL.MongoDB.Interfaces
+namespace RecruitJr.DAL.MongoDB.Interfaces
 {
     public interface IDbRecord
     {

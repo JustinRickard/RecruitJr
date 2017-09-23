@@ -1,6 +1,6 @@
-using Common.Interfaces.Helpers;
+using RecruitJr.Core.Interfaces.Helpers;
 
-namespace Common.Helpers
+namespace RecruitJr.Core.Helpers
 {
     public class PasswordHelper : IPasswordHelper
     {

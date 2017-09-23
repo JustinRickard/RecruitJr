@@ -1,6 +1,6 @@
-using Common.Interfaces;
+using RecruitJr.Core.Interfaces;
 
-namespace Common.Classes
+namespace RecruitJr.Core.Classes
 {
     public class AppSettings : IAppSettings
     {

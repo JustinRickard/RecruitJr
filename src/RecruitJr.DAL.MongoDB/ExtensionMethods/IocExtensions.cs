@@ -1,9 +1,9 @@
-using Common.Interfaces.Repositories;
-using DAL.MongoDB.Repositories;
+using RecruitJr.Core.Interfaces.Repositories;
+using RecruitJr.DAL.MongoDB.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 
-namespace DAL.MongoDB.ExtensionMethods
+namespace RecruitJr.DAL.MongoDB.ExtensionMethods
 {
     public static class IocExtensions
     {

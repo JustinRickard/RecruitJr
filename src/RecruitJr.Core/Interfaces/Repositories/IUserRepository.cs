@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Common.Classes;
-using Common.Dto;
-using Common.SearchFilters;
+using RecruitJr.Core.Classes;
+using RecruitJr.Core.Dto;
+using RecruitJr.Core.SearchFilters;
 
-namespace Common.Interfaces.Repositories
+namespace RecruitJr.Core.Interfaces.Repositories
 {
     public interface IUserRepository
     {

@@ -1,10 +1,10 @@
 using System;
-using Common.Dto;
-using Common.Enums;
+using RecruitJr.Core.Dto;
+using RecruitJr.Core.Enums;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace DAL.MongoDB.Models
+namespace RecruitJr.DAL.MongoDB.Models
 {
     public class DbUser : DbRecordBase
     {
