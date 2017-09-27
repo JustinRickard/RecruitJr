@@ -1,9 +1,10 @@
 using System;
+using System.Collections.Generic;
 using RecruitJr.Core.Classes;
 using RecruitJr.Core.Enums;
 using RecruitJr.Core.ExtensionMethods;
 
-namespace RecruitJr.Core.Dto
+namespace RecruitJr.Core.Models
 {
     public class User : DbRecordBase
     {
@@ -35,16 +36,16 @@ namespace RecruitJr.Core.Dto
             string username
         )
         {
-            Client = client;
+            ClientId = client;
             FirstName = firstName;
             LastName = lastName;
             Email = email;
             Username = username;
         }
 
-        public string Client { get; set; }
-        public string Username  { get; set; }
-        public string NormalizedUserName { get; set; }
+        public string ClientId { get; set; }
+        public Client Client { get; set; }
+        public string Username  { get; set; }        
         public string PasswordHash { get; set; }
         public string Token { get; set; }
         public string FirstName { get; set; }
@@ -52,6 +53,12 @@ namespace RecruitJr.Core.Dto
         public string Email     { get; set; }
         public bool EmailConfirmed { get; set; }
 
+        public Dictionary<string, string> Settings { get; set; }
+        public IEnumerable<string> Roles { get; set; }
+
+
+        // Computed fields
+        public string NormalizedUserName => Username.ToUpper();
         public bool IsValid =>
             FirstName.NotEmpty() &&
             LastName.NotEmpty() &&

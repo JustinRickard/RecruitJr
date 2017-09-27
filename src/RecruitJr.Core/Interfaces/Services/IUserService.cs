@@ -3,6 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using RecruitJr.Core.Classes;
 using RecruitJr.Core.Dto;
+using RecruitJr.Core.Models;
 
 namespace RecruitJr.Core.Interfaces.Services
 {

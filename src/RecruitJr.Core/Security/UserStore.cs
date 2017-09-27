@@ -3,6 +3,7 @@ using RecruitJr.Core.Interfaces.Services;
 using Microsoft.AspNetCore.Identity;
 using System.Threading;
 using RecruitJr.Core.Dto;
+using RecruitJr.Core.Models;
 using RecruitJr.Core.ExtensionMethods;
 using RecruitJr.Core.Interfaces.Repositories;
 using RecruitJr.Core.Interfaces.Helpers;
@@ -78,21 +79,9 @@ namespace RecruitJr.Core.Security
                 : null;
         }
 
-        public async Task<string> GetNormalizedUserNameAsync(User user, CancellationToken cancellationToken)
+        public Task<string> GetNormalizedUserNameAsync(User user, CancellationToken cancellationToken)
         {
-            await Audit<User>(Keycodes.AttemptGetNormalizedUserNameAsync, user);
-
-            var result = user.Id.NotEmpty() 
-                ? await userService.GetById(user.Id)
-                : await userService.GetByUsername(user.Username);
-
-            if (result.IsFailure)
-            {
-                throw new Exception(string.Format("GetNormalizedUserName: Failed to get user from DB. User: {0}", user));
-            }
-
-            await Audit<Result<User>>(Keycodes.GetNormalizedUserNameAsyncComplete, result);          
-            return result.Value.NormalizedUserName;             
+            return Task.FromResult(user.NormalizedUserName);
         }
 
         public async Task<string> GetUserIdAsync(User user, CancellationToken cancellationToken)
@@ -131,14 +120,9 @@ namespace RecruitJr.Core.Security
             return dbUserResult.Value.Username;
         }
 
-        public async Task SetNormalizedUserNameAsync(User user, string normalizedName, CancellationToken cancellationToken)
-        {
-            await Audit<User, object>(Keycodes.AttemptSetNormalizedUserNameAsync, user, new { normalizedName = normalizedName});
-
-            var result = await userService.SetNormalizedUsername(user, normalizedName, cancellationToken);
-            user.NormalizedUserName = normalizedName;
-
-            await Audit<Result<User>>(Keycodes.SetNormalizedUserNameAsyncComplete, result);
+        public Task SetNormalizedUserNameAsync(User user, string normalizedName, CancellationToken cancellationToken)
+        {            
+            return Task.CompletedTask;
         }
 
         public async Task SetUserNameAsync(User user, string userName, CancellationToken cancellationToken)

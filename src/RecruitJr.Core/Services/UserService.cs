@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using RecruitJr.Core.Interfaces.Repositories;
 using RecruitJr.Core.Interfaces.Services;
 using RecruitJr.Core.Dto;
+using RecruitJr.Core.Models;
 using RecruitJr.Core.Classes;
 using RecruitJr.Core.Enums;
 using RecruitJr.Core.Interfaces.Helpers;

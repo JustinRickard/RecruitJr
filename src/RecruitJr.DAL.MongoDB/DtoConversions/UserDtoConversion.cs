@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using RecruitJr.DAL.MongoDB.Models;
-using RecruitJr.Core.Dto;
+using RecruitJr.Core.Models;
 using MongoDB.Bson;
 
 namespace RecruitJr.DAL.MongoDB.DtoConversions
@@ -13,7 +13,6 @@ namespace RecruitJr.DAL.MongoDB.DtoConversions
             return new User {
                 Id = dbUser.Id,
                 Username = dbUser.Username,
-                NormalizedUserName = dbUser.NormalizedUserName,
                 Email = dbUser.Email,
                 FirstName = dbUser.FirstName,
                 LastName = dbUser.LastName,

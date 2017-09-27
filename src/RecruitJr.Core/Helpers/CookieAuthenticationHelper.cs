@@ -1,5 +1,5 @@
 // using System.Security.Claims;
-using RecruitJr.Core.Dto;
+using RecruitJr.Core.Models;
 
 namespace RecruitJr.Core.Helpers
 {

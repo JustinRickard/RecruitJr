@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using RecruitJr.Core.Interfaces.Repositories;
 using RecruitJr.Core.Dto;
+using RecruitJr.Core.Models;
 using RecruitJr.Core.Classes;
 using RecruitJr.DAL.MongoDB.DtoConversions;
 using RecruitJr.DAL.MongoDB;

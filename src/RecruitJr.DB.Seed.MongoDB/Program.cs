@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 using RecruitJr.DAL.MongoDB.Repositories;
 using RecruitJr.Core.Interfaces.Repositories;
 using RecruitJr.Core.Interfaces.Helpers;
-using RecruitJr.Core.Dto;
+using RecruitJr.Core.Models;
 using RecruitJr.Core.Classes;
 using RecruitJr.Core.Helpers;
 using DB.Seed.MongoDB.Helpers;
