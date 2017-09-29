@@ -12,8 +12,9 @@ using RecruitJr.Core.ExtensionMethods;
 using RecruitJr.Core.Interfaces.Helpers;
 using RecruitJr.DAL.MongoDB.Repositories;
 using RecruitJr.DAL.MongoDB.ExtensionMethods;
+using RecruitJr.DB.Seed.Common.ExtensionMethods;
 
-namespace DB.Seed.MongoDB.Helpers
+namespace RecruitJr.DB.Seed.MongoDB.Helpers
 {
     public static class ConfigurationHelper
     {
@@ -29,13 +30,18 @@ namespace DB.Seed.MongoDB.Helpers
 
         public static IServiceProvider BuildServiceProvider(IConfigurationRoot config) {
                 IServiceCollection services = new ServiceCollection()
-                    .AddLogging()
                     .AddOptions()
                     .Configure<AppSettings>(config.GetSection("AppSettings"));
                 
+                services.AddSingleton(new LoggerFactory()
+                    .AddConsole()
+                    .AddDebug(LogLevel.Trace));
+                services.AddLogging(); 
+
                 // Dependency injection bindings for application
                 services.BindCommonServicesAsSingleton();
                 services.BindRepositoriesAsSingleton();
+                services.BindSeeders();
 
                 IServiceProvider serviceProvider = services
                     .BuildServiceProvider();

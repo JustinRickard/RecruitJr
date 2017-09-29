@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;  
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Console;
 using Microsoft.Extensions.Configuration;
 using RecruitJr.DAL.MongoDB.Repositories;
 using RecruitJr.Core.Interfaces.Repositories;
@@ -12,7 +13,8 @@ using RecruitJr.Core.Interfaces.Helpers;
 using RecruitJr.Core.Models;
 using RecruitJr.Core.Classes;
 using RecruitJr.Core.Helpers;
-using DB.Seed.MongoDB.Helpers;
+using RecruitJr.DB.Seed.Common;
+using RecruitJr.DB.Seed.MongoDB.Helpers;
 
 namespace DB.Seed.MongoDB
 {
@@ -25,10 +27,17 @@ namespace DB.Seed.MongoDB
         {
             Configuration = ConfigurationHelper.BuildConfig();
             ServiceProvider = ConfigurationHelper.BuildServiceProvider(Configuration);            
-            
+
             var logger = ServiceProvider.GetService<ILoggerFactory>()
                 .CreateLogger<Program>();
-            logger.LogDebug("Starting DB seeding...");
+            logger.LogDebug("Start seeding data to MongoDB...");
+            
+            ServiceProvider.GetService<Seeder>().Run();
+
+            /*
+            var logger = ServiceProvider.GetService<ILoggerFactory>()
+                .CreateLogger<Seeder>();
+            logger.LogTrace("Starting DB seeding...");
 
             var userRepository = ServiceProvider.GetService<IUserRepository>();
             var jsonHelper = ServiceProvider.GetService<IJsonHelper>();
@@ -57,6 +66,7 @@ namespace DB.Seed.MongoDB
             }
 
             logger.LogDebug("Finished seeding");
+             */
 
         }
     }
