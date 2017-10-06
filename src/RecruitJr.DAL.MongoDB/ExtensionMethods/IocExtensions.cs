@@ -9,12 +9,16 @@ namespace RecruitJr.DAL.MongoDB.ExtensionMethods
     {
         public static void BindRepositoriesAsSingleton(this IServiceCollection serviceProvider) {
             serviceProvider
-                .AddSingleton<IUserRepository, UserRepository>();
+                .AddTransient<IAuditRepository, AuditRepository>()
+                .AddSingleton<IUserRepository, UserRepository>()
+                .AddSingleton<IClientRepository, ClientRepository>();;
         }
 
         public static void BindRepositoriesAsTransient(this IServiceCollection serviceProvider) {
             serviceProvider
-                .AddTransient<IUserRepository, UserRepository>();
+                .AddTransient<IAuditRepository, AuditRepository>()
+                .AddTransient<IUserRepository, UserRepository>()
+                .AddSingleton<IClientRepository, ClientRepository>();;
         }
     }
 }

@@ -9,7 +9,10 @@ namespace RecruitJr.Core.Classes
         private Maybe () {}
 
         public Maybe (T value) {
-            this.value = value;
+            if (value != null)
+            {
+                this.value = value;
+            }
         }        
 
         public T Value { 

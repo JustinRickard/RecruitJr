@@ -3,7 +3,6 @@
     "Name": "Admin account",
     "Code": "ADMIN",
     "ParentCode": null,
-    "Subodmain": "admin",
     "Settings": {
       "DefaultReturnUrl": null,
       "DefaultMaximumWeblinkLogins": 3
@@ -19,7 +18,6 @@
     "Name": "Admin sub-account account 1",
     "Code": "ADSUB1",
     "ParentCode": "ADMIN",
-    "Subodmain": "admin",
     "Settings": {
       "DefaultReturnUrl": null,
       "DefaultMaximumWeblinkLogins": null

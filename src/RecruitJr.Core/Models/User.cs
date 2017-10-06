@@ -13,14 +13,14 @@ namespace RecruitJr.Core.Models
         public User(
             string id,
             string client, 
-            string firstName,
-            string lastName,
+            string forename,
+            string surname,
             string email,
             string username,
             DateTimeOffset dateCreated,
             DateTimeOffset lastModified,
             bool deleted
-        ) : this(client, firstName, lastName, email, username)
+        ) : this(client, forename, surname, email, username)
         {
             Id = id;
             DateCreated = dateCreated;
@@ -30,15 +30,15 @@ namespace RecruitJr.Core.Models
 
         public User (
             string client, 
-            string firstName,
-            string lastName,
+            string forename,
+            string surname,
             string email,
             string username
         )
         {
             ClientId = client;
-            FirstName = firstName;
-            LastName = lastName;
+            Forename = forename;
+            Surname = surname;
             Email = email;
             Username = username;
         }
@@ -48,8 +48,8 @@ namespace RecruitJr.Core.Models
         public string Username  { get; set; }        
         public string PasswordHash { get; set; }
         public string Token { get; set; }
-        public string FirstName { get; set; }
-        public string LastName  { get; set; }
+        public string Forename { get; set; }
+        public string Surname  { get; set; }
         public string Email     { get; set; }
         public bool EmailConfirmed { get; set; }
 
@@ -60,8 +60,8 @@ namespace RecruitJr.Core.Models
         // Computed fields
         public string NormalizedUserName => Username.ToUpper();
         public bool IsValid =>
-            FirstName.NotEmpty() &&
-            LastName.NotEmpty() &&
+            Forename.NotEmpty() &&
+            Surname.NotEmpty() &&
             Email.NotEmpty() &&
             Username.NotEmpty();
     }

@@ -43,7 +43,11 @@ namespace RecruitJr.DAL.MongoDB
         // GET
         internal protected async Task<Maybe<TEntity>> GetOne<TEntity>(string id) where TEntity : DbRecordBase, new()
         {            
-                return await GetOne<TEntity>(GetByIdFilter<TEntity>(id));
+            return await GetOne<TEntity>(GetByIdFilter<TEntity>(id));
+        }
+
+        internal protected async Task<Maybe<TEntity>> GetOneByCode<TEntity>(string code)  where TEntity : DbRecordBase, IDbRecordWithCode, new() {
+            return await GetOne<TEntity>(GetByCodeFilter<TEntity>(code));
         }
 
         internal protected async Task<Maybe<TEntity>> GetOne<TEntity>(FilterDefinition<TEntity> filter) where TEntity : class, new()
@@ -148,9 +152,7 @@ namespace RecruitJr.DAL.MongoDB
 
         private Maybe<TEntity> ReturnMaybe<TEntity>(TEntity entity)
         {
-            return entity != null
-                ? new Maybe<TEntity>(entity)
-                : Maybe<TEntity>.Fail;
+            return new Maybe<TEntity>(entity);
         }
 
         private FilterDefinition<TEntity> GetByIdFilter<TEntity> (string id) where TEntity : IDbRecord
@@ -158,6 +160,10 @@ namespace RecruitJr.DAL.MongoDB
             return Builders<TEntity>.Filter.Eq(x => x.Id, id);
         }
 
+        private FilterDefinition<TEntity> GetByCodeFilter<TEntity> (string code) where TEntity : IDbRecordWithCode
+        {
+            return Builders<TEntity>.Filter.Eq(x => x.Code, code);
+        }
         
         private DateTimeOffset Now => DateTimeOffset.Now;
     }

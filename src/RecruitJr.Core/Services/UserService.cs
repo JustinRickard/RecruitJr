@@ -128,22 +128,9 @@ namespace RecruitJr.Core.Services
             return Result<User>.Succeed(result.Value);
         }
 
-        public async Task<Result<User>> SetNormalizedUsername(User user, string normalizedUsername, CancellationToken cancellationToken)
+        public Task<Result<User>> SetNormalizedUsername(User user, string normalizedUsername, CancellationToken cancellationToken)
         {
-            await Audit<User, object>(AuditType.UserRecord, Constants.Resources.Keycodes.User.AttemptEditNormalizedUsername, user, new { NormalizedUsername = normalizedUsername });
-
-            var result = await userRepository.UpdateNormalizedUsername(user, normalizedUsername, cancellationToken);
-
-            // JR Temp 
-            await Audit<Maybe<User>>(AuditType.UserRecord, "Update normalized username response", result);
-
-            if (result.HasNoValue)
-            {
-                return Result<User>.Fail(ResultCode.NotFound);
-            }
-
-            await Audit<User>(AuditType.UserRecord, Constants.Resources.Keycodes.User.EditNormalizedUsernameComplete, user);
-            return Result<User>.Succeed(result.Value);
+            return Task.FromResult(Result<User>.Succeed(user));
         }
 
         public async Task<Result> Delete(string id) {

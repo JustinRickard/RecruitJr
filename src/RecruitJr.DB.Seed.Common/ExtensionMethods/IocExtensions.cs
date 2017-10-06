@@ -8,7 +8,8 @@ namespace RecruitJr.DB.Seed.Common.ExtensionMethods
         public static void BindSeeders(this IServiceCollection serviceProvider) {
             serviceProvider
                 .AddSingleton<Seeder>()
-                .AddSingleton<UserSeeder>();
+                .AddSingleton<UserSeeder>()
+                .AddSingleton<ClientSeeder>();;
         }
     }
 }

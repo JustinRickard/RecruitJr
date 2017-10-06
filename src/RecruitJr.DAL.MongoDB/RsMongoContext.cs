@@ -32,6 +32,7 @@ namespace RecruitJr.DAL.MongoDB
         public IMongoCollection<DbAudit> AuditLogs => GetCollection<DbAudit>();
         public IMongoCollection<DbRole> Roles => GetCollection<DbRole>();
         public IMongoCollection<DbUser> Users => GetCollection<DbUser>();
+        public IMongoCollection<DbClient> Clients => GetCollection<DbClient>();
 
         public void Dispose() {
             this.Database = null;
@@ -40,7 +41,8 @@ namespace RecruitJr.DAL.MongoDB
         private Dictionary<Type, string> dbEntityToCollectionNameMappings = new Dictionary<Type, string>() {
             { typeof(DbAudit), Constants.Collections.AuditLogs },
             { typeof(DbRole), Constants.Collections.Roles },
-            { typeof(DbUser), Constants.Collections.Users }
+            { typeof(DbUser), Constants.Collections.Users },
+            { typeof(DbClient), Constants.Collections.Clients }
         };
 
         private string GetCollectionName<TEntity>()

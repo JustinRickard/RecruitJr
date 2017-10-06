@@ -66,7 +66,7 @@ namespace RecruitJr.DAL.MongoDB.Repositories
         public async Task<Maybe<User>> GetByNormalizedUsername(string normalizedUsername)
         {
             using (var ctx = GetContext()) {
-                var user = await ctx.Users.AsQueryable().Where(x => x.NormalizedUserName == normalizedUsername).SingleOrDefaultAsync();                
+                var user = await ctx.Users.AsQueryable().Where(x => x.Username.ToUpper() == normalizedUsername).SingleOrDefaultAsync();                
                 return MaybeUser(user);
             };
         }
@@ -104,8 +104,8 @@ namespace RecruitJr.DAL.MongoDB.Repositories
         {
             var update = Builders<DbUser>.Update
                 .Set(x => x.Email, user.Email)
-                .Set(x => x.FirstName, user.FirstName)
-                .Set(x => x.LastName, user.LastName)
+                .Set(x => x.Forename, user.Forename)
+                .Set(x => x.Surname, user.Surname)
                 .Set(x => x.EmailConfirmed, user.EmailConfirmed);
 
             return await UpdateAndReturn<DbUser>(user.Id, update);           
@@ -116,15 +116,7 @@ namespace RecruitJr.DAL.MongoDB.Repositories
             var update = Builders<DbUser>.Update
                         .Set(x => x.Username, username);
             return await UpdateAndReturn<DbUser>(user.Id, update);
-        }
-
-        public async Task<Maybe<User>> UpdateNormalizedUsername (User user, string normalizedUsername, CancellationToken cancellationToken)
-        {
-            var update = Builders<DbUser>.Update
-                .Set(x => x.NormalizedUserName, normalizedUsername);
-            return await UpdateAndReturn<DbUser>(user.Id, update);
-        }
-    
+        }    
 
         public async Task<Maybe<User>> UpdatePassword(User user, string passwordHash, CancellationToken cancellationToken)
         {
@@ -174,12 +166,12 @@ namespace RecruitJr.DAL.MongoDB.Repositories
                 query = query.Where(x => x.ClientId == filter.ClientId);
             }
 
-            if (filter.FirstName.NotEmpty()) {
-                query = query.Where(x => x.FirstName.CaseInsensitiveEquals(filter.FirstName));
+            if (filter.Forename.NotEmpty()) {
+                query = query.Where(x => x.Forename.CaseInsensitiveEquals(filter.Forename));
             }
 
-            if (filter.LastName.NotEmpty()) {
-                query = query.Where(x => x.LastName.CaseInsensitiveEquals(filter.LastName));
+            if (filter.Surname.NotEmpty()) {
+                query = query.Where(x => x.Surname.CaseInsensitiveEquals(filter.Surname));
             }
 
             if (filter.Email.NotEmpty()) {

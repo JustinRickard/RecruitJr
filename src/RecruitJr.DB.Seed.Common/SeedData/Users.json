@@ -11,12 +11,6 @@
 		},
 		"Roles": [
 			"SuperAdmin"
-		],		
-		"Features": [
-			"CsvReports",
-			"PdfReports",
-			"MultiplePdfReportDownloads",
-			"MultipleParticipantUploads"
 		]
 	}
 ]

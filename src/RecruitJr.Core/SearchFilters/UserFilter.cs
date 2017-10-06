@@ -6,9 +6,8 @@ namespace RecruitJr.Core.SearchFilters
     {
         public string Username { get; set; }
         public string Email { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public Gender? Gender { get; set; }
+        public string Forename { get; set; }
+        public string Surname { get; set; }
         public string ClientId { get; set; }
     }
 }
