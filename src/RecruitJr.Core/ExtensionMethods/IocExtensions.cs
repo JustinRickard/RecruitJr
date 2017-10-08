@@ -22,6 +22,7 @@ namespace RecruitJr.Core.ExtensionMethods
                 .AddSingleton<IPasswordHelper, PasswordHelper>()
                 .AddSingleton<IPasswordHasher<User>, PasswordHasher>()
                 .AddSingleton<IJsonHelper, JsonHelper>()
+                .AddSingleton<IFileReader, FileReader>()
                 .AddSingleton<IAuditHelper, AuditHelper>()
                 .AddSingleton<UserManager<User>>()
                 .AddSingleton<IUserStore<User>, UserStore>()

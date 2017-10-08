@@ -3,6 +3,8 @@ using RecruitJr.Core.Interfaces.Repositories;
 using RecruitJr.DB.Seed.Common.Seeders;
 using RecruitJr.DB.Seed.Common.Interfaces;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using RecruitJr.Core.Classes;
 
 namespace RecruitJr.DB.Seed.Common
 {
@@ -13,9 +15,12 @@ namespace RecruitJr.DB.Seed.Common
 
         public Seeder(
             ILoggerFactory loggerFactory,
+            IOptions<AppSettings> appSettings,
+            IFileReader fileReader,
+            IJsonHelper jsonHelper,
             UserSeeder userSeeder,
             ClientSeeder clientSeeder
-        ): base(loggerFactory) {
+        ): base(appSettings, fileReader, jsonHelper, loggerFactory) {
             this.userSeeder = userSeeder;
             this.clientSeeder = clientSeeder;
         }

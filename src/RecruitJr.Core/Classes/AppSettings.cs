@@ -6,5 +6,6 @@ namespace RecruitJr.Core.Classes
     {
         public string DatabaseName { get; set;}
         public string ConnectionString { get; set; }
+        public string DbSeedingFilesDirectory { get; set; }
     }
 }

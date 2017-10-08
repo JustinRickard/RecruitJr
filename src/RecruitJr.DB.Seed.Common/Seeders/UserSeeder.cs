@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Identity;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System;
+using Microsoft.Extensions.Options;
 
 namespace RecruitJr.DB.Seed.Common.Seeders
 {
@@ -22,19 +23,22 @@ namespace RecruitJr.DB.Seed.Common.Seeders
 
         public UserSeeder(
             IClientRepository clientRepository,
-            ILoggerFactory loggerFactory,
+            IFileReader fileReader,
+            IJsonHelper jsonHelper,
+            IOptions<AppSettings> appSettings,
+            ILoggerFactory loggerFactory,            
             UserManager<User> userManager
-        ): base(loggerFactory) {
+        ): base(appSettings, fileReader, jsonHelper, loggerFactory) {
             this.userManager = userManager;
             this.clientRepository = clientRepository;
-        }
+            this.fileName = "Users.json";
+        }        
 
         public async Task<Result> Seed()
         {
             logger.LogDebug("Seeding user data...");
 
-            var users = new List<SeedUserAddDto>();
-            // TODO: Read users from JSON.
+            var users = DeserializeFile<IEnumerable<SeedUserAddDto>>();
 
             foreach(var userDto in users) 
             {
@@ -49,6 +53,11 @@ namespace RecruitJr.DB.Seed.Common.Seeders
 
             logger.LogDebug("Seeding user data complete.");
             return Result.Succeed();
+        }
+
+        Task<Result> ISeeder.Seed()
+        {
+            throw new NotImplementedException();
         }
     }
 }

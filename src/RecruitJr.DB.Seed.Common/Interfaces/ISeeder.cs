@@ -5,6 +5,6 @@ namespace RecruitJr.DB.Seed.Common.Interfaces
 {
     public interface ISeeder
     {
-         Task<Result> Seed();
+        Task<Result> Seed();
     }
 }
