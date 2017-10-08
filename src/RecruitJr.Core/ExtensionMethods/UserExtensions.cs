@@ -15,7 +15,7 @@ namespace RecruitJr.Core.ExtensionMethods
                 Settings = dto.Settings,
                 Roles = dto.Roles,
                 EmailConfirmed = true,
-                Token = string.Empty,                
+                Token = null,                
                 PasswordHash = string.Empty
             };
         }

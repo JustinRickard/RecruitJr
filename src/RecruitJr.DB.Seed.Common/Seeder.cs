@@ -14,25 +14,22 @@ namespace RecruitJr.DB.Seed.Common
         ClientSeeder clientSeeder;
 
         public Seeder(
-            ILoggerFactory loggerFactory,
-            IOptions<AppSettings> appSettings,
-            IFileReader fileReader,
-            IJsonHelper jsonHelper,
+            SeederDependencies dependencies,
             UserSeeder userSeeder,
             ClientSeeder clientSeeder
-        ): base(appSettings, fileReader, jsonHelper, loggerFactory) {
+        ): base(dependencies) {      
             this.userSeeder = userSeeder;
-            this.clientSeeder = clientSeeder;
-        }
+            this.clientSeeder = clientSeeder;      
+        }        
 
         public void Run() {
 
-            logger.LogDebug("Seeding data to database...");
+            dependencies.logger.LogDebug("Seeding data to database...");
 
             clientSeeder.Seed().Wait();
             userSeeder.Seed().Wait();
 
-            logger.LogDebug("Seeding complete");
+            dependencies.logger.LogDebug("Seeding complete");
         }
     }
 }

@@ -10,22 +10,14 @@ namespace RecruitJr.DB.Seed.Common
 {
     public class SeederBase
     {
-        protected internal ILogger<Seeder> logger;
-        protected internal AppSettings appSettings;
-        protected internal IFileReader fileReader;
-        protected internal IJsonHelper jsonHelper;
+        protected internal SeederDependencies dependencies;
+
         protected internal string fileName;
 
         public SeederBase(
-            IOptions<AppSettings> appSettings,
-            IFileReader fileReader,
-            IJsonHelper jsonHelper,
-            ILoggerFactory loggerFactory
-            ) {
-            this.logger = loggerFactory.CreateLogger<Seeder>();
-            this.appSettings = appSettings.Value;
-            this.fileReader = fileReader;
-            this.jsonHelper = jsonHelper;
+            SeederDependencies dependencies
+        ) {
+            this.dependencies = dependencies;
         }
 
         protected internal string SeedFileDirectory 
@@ -33,7 +25,7 @@ namespace RecruitJr.DB.Seed.Common
             get 
             {
                 // var directory = Directory.GetCurrentDirectory() + '/' + appSettings.DbSeedingFilesDirectory;
-                var directory = appSettings.DbSeedingFilesDirectory;
+                var directory = dependencies.appSettings.DbSeedingFilesDirectory;
                 if (!Directory.Exists(directory)) {
                     throw new Exception("Seed file directory not found: " + directory);
                 }
@@ -43,7 +35,7 @@ namespace RecruitJr.DB.Seed.Common
         }       
 
         protected internal T DeserializeFile<T>() {
-            var itemsResult = jsonHelper.Deserialize<T>(GetFileContent());
+            var itemsResult = dependencies.jsonHelper.Deserialize<T>(GetFileContent());
             if (itemsResult.IsFailure) {
                 throw new Exception("Could not deserialize file: " + fileName);
             }
@@ -54,7 +46,7 @@ namespace RecruitJr.DB.Seed.Common
         private string GetFileContent() 
         {
             string filePath = Path.Combine(Directory.GetCurrentDirectory(), SeedFileDirectory, fileName);
-            return fileReader.Read(filePath);
+            return dependencies.fileReader.Read(filePath);
         }
 
     }

@@ -13,45 +13,38 @@ namespace RecruitJr.DB.Seed.Common.Seeders
 {
     public class ClientSeeder : SeederBase, ISeeder
     {
-        IClientRepository clientRepository;
-
         public ClientSeeder(
-            IClientRepository clientRepository,
-            IFileReader fileReader,
-            IJsonHelper jsonHelper,
-            IOptions<AppSettings> appSettings,
-            ILoggerFactory loggerFactory
-        ) : base(appSettings, fileReader, jsonHelper, loggerFactory)
+            SeederDependencies dependencies
+        ) : base(dependencies)
         {
-            this.clientRepository = clientRepository;
             this.fileName = "Clients.json";
         }
 
         public async Task<Result> Seed()
         {
-            logger.LogDebug("Seeding client data...");
+            dependencies.logger.LogDebug("Seeding client data...");
 
             var clients = DeserializeFile<IEnumerable<SeedClientAddDto>>();
 
             foreach(var clientDto in clients) 
             {
-                var maybeClient = await clientRepository.GetByCode(clientDto.Code);
+                var maybeClient = await dependencies.clientRepository.GetByCode(clientDto.Code);
                 
                 if (maybeClient.HasNoValue) {
 
                     string parentId = null;
                     if (clientDto.ParentCode.NotEmpty()) {
-                        var parent = await clientRepository.GetByCode(clientDto.ParentCode);
+                        var parent = await dependencies.clientRepository.GetByCode(clientDto.ParentCode);
                         if (parent.HasValue) {
                             parentId = parent.Value.Id;
                         }
                     }
 
-                    await clientRepository.Add(clientDto.ToModel(parentId));
+                    await dependencies.clientRepository.Add(clientDto.ToModel(parentId));
                 }
             }
 
-            logger.LogDebug("Seeding client data complete.");
+            dependencies.logger.LogDebug("Seeding client data complete.");
             return Result.Succeed();
         }
     }
