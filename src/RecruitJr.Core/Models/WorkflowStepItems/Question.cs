@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace RecruitJr.Core.Models.WorkflowStepItems
 {
-    public class Question : ModelWithCodeBase
+    public class Question : WorkflowStepItemBase
     {
         public string QuestionText { get; set; }
 

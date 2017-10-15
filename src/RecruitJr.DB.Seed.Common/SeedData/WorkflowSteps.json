@@ -3,7 +3,7 @@
     "StepType": "SimpleQuestionnaire",
     "Code": "EX_PERS",
     "Name": "Example Personality Test",
-    "Questions": [
+    "Content": [
       {
         "Code": "EPT_01",
         "CompetencyCode": "WORKS_QUICKLY",
@@ -64,7 +64,7 @@
     "StepType": "ScenarioQuestionnaire",
     "Name": "Example Personality Test",
     "Code": "EX_SCEN",
-    "Scenarios": [
+    "Content": [
       {
         "Code": "ESQ_01",
         "Text": "You are in a supermarket are asked the following questions from customers. The supermarket sells everything including bread, which is in the bread aisle. They do not provide cashback. There is an ATM machine just outside.",

@@ -3,7 +3,7 @@ using RecruitJr.Core.Interfaces.Models;
 
 namespace RecruitJr.Core.Models.WorkflowStepItems
 {
-    public class SimpleQuestion : ModelWithCodeBase, IWorkflowStepItem
+    public class SimpleQuestion : WorkflowStepItemBase, IWorkflowStepItem
     {
         public WorkflowStepItemType ItemType { get => WorkflowStepItemType.SimpleQuestion; }
 

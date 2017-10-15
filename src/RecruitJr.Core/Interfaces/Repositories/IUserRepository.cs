@@ -8,10 +8,8 @@ using RecruitJr.Core.SearchFilters;
 
 namespace RecruitJr.Core.Interfaces.Repositories
 {
-    public interface IUserRepository
+    public interface IUserRepository : IRepository<User, UserFilter>
     {
-         Task<Maybe<User>> GetById (string id);
-
          Task<Maybe<User>> GetByUsername(string username);
 
          Task<Maybe<User>> GetByNormalizedUsername(string username);
@@ -20,20 +18,8 @@ namespace RecruitJr.Core.Interfaces.Repositories
 
          Task<Maybe<string>> GetPasswordHash (string userId);
 
-         Task<IEnumerable<User>> GetAll();
-
-         Task<IEnumerable<User>> Get(UserFilter filter);
-
-         Task<Maybe<User>> Add (User user);
-
-         Task<Maybe<User>> Update (User user);
-
          Task<Maybe<User>> UpdateUsername (User user, string username, CancellationToken cancellationToken);
 
          Task<Maybe<User>> UpdatePassword(User user, string passwordHash, CancellationToken cancellationToken);
-
-         Task Delete(string id);
-
-         Task Obliterate(string id);
     }
 }
