@@ -16,13 +16,11 @@ namespace RecruitJr.DAL.MongoDB.Repositories
 {
     public class ClientRepository : RepositoryBase, IClientRepository
     {
-        private IPasswordHelper passwordHelper;
-
         public ClientRepository(
             IOptions<AppSettings> appSettings,
             IPasswordHelper passwordHelper
-            ) : base(appSettings) {
-            this.passwordHelper = passwordHelper;
+        ) : base(appSettings) 
+        {
         }        
         public async Task<Maybe<Client>> Add(Client client)
         {
@@ -39,14 +37,14 @@ namespace RecruitJr.DAL.MongoDB.Repositories
         {
             using (var ctx = GetContext()) {
                 var clients = await Filter(ctx, filter).ToListAsync();
-                return clients.ToDto();
+                return clients.ToModel();
             }
         }
 
         public async Task<IEnumerable<Client>> GetAll()
         {
             var dbClients = await GetAllNotDeleted<DbClient>();
-            return dbClients.ToDto();
+            return dbClients.ToModel();
         }
 
         public async Task<Maybe<Client>> GetByCode(string code)
@@ -63,7 +61,7 @@ namespace RecruitJr.DAL.MongoDB.Repositories
 
         public async Task Obliterate(string id)
         {
-            await Obliterate<DbUser>(id);
+            await Obliterate<DbClient>(id);
         }
 
         public async Task<Maybe<Client>> Update(Client client)

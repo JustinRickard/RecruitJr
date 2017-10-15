@@ -11,14 +11,16 @@ namespace RecruitJr.DAL.MongoDB.ExtensionMethods
             serviceProvider
                 .AddTransient<IAuditRepository, AuditRepository>()
                 .AddSingleton<IUserRepository, UserRepository>()
-                .AddSingleton<IClientRepository, ClientRepository>();;
+                .AddSingleton<IClientRepository, ClientRepository>()
+                .AddSingleton<IProjectRepository, ProjectRepository>();
         }
 
         public static void BindRepositoriesAsTransient(this IServiceCollection serviceProvider) {
             serviceProvider
                 .AddTransient<IAuditRepository, AuditRepository>()
                 .AddTransient<IUserRepository, UserRepository>()
-                .AddSingleton<IClientRepository, ClientRepository>();;
+                .AddTransient<IClientRepository, ClientRepository>()
+                .AddTransient<IProjectRepository, ProjectRepository>();
         }
     }
 }

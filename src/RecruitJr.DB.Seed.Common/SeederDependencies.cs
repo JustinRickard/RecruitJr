@@ -12,6 +12,7 @@ namespace RecruitJr.DB.Seed.Common
     {
             public IClientRepository clientRepository;
             public IUserRepository userRepository;
+            public IProjectRepository projectRepository;
             public IFileReader fileReader;
             public IJsonHelper jsonHelper;
             public AppSettings appSettings;
@@ -21,6 +22,7 @@ namespace RecruitJr.DB.Seed.Common
         public SeederDependencies(
             IClientRepository clientRepository,
             IUserRepository userRepository,
+            IProjectRepository projectRepository,
             IFileReader fileReader,
             IJsonHelper jsonHelper,
             IOptions<AppSettings> appSettings,
@@ -29,6 +31,7 @@ namespace RecruitJr.DB.Seed.Common
         ) {
             this.clientRepository = clientRepository;
             this.userRepository = userRepository;
+            this.projectRepository = projectRepository;
             this.fileReader = fileReader;
             this.jsonHelper = jsonHelper;
             this.appSettings = appSettings.Value;

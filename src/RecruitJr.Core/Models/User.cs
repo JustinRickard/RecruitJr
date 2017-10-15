@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using RecruitJr.Core.Classes;
+using RecruitJr.Core.Dto;
 using RecruitJr.Core.Enums;
 using RecruitJr.Core.ExtensionMethods;
 
@@ -53,7 +54,7 @@ namespace RecruitJr.Core.Models
         public string Email     { get; set; }
         public bool EmailConfirmed { get; set; }
 
-        public Dictionary<string, string> Settings { get; set; }
+        public UserSettings Settings { get; set; }
         public IEnumerable<string> Roles { get; set; }
 
 

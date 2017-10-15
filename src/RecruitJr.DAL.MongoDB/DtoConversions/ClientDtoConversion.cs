@@ -29,13 +29,13 @@ namespace RecruitJr.DAL.MongoDB.DtoConversions
             };
         }
 
-        public static IEnumerable<Client> ToDto(this IEnumerable<DbClient> clients) {
+        public static IEnumerable<Client> ToModel(this IEnumerable<DbClient> clients) {
             return clients != null 
                 ? clients.Select(client => client.ToModel())
                 : new List<Client>();
         }
 
-        public static IEnumerable<DbClient> ToDto(this IEnumerable<Client> clients) {
+        public static IEnumerable<DbClient> ToModel(this IEnumerable<Client> clients) {
             return clients != null
                 ? clients.Select(client => client.ToDb())
                 : new List<DbClient>();

@@ -12,7 +12,7 @@ namespace RecruitJr.Core.Dto
         public string Forename { get; set;}
         public string Surname { get; set; }
         
-        public Dictionary<string, string> Settings { get; set; }
+        public UserSettings Settings { get; set; }
         public IEnumerable<string> Roles { get; set; }
     }
 }

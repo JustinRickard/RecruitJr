@@ -12,6 +12,7 @@ namespace RecruitJr.DAL.MongoDB
             public const string Projects = "projects";
             public const string Workflows = "workflows";
             public const string WorkflowSteps = "workflow_steps";
+            public const string WorkflowStepItems = "workflow_step_items";
             
         }
     }

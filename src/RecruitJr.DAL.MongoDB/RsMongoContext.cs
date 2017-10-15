@@ -29,10 +29,14 @@ namespace RecruitJr.DAL.MongoDB
             return Database.GetCollection<TEntity>(collectionName);
         }        
 
-        public IMongoCollection<DbAudit> AuditLogs => GetCollection<DbAudit>();
+        public IMongoCollection<DbAudit> AuditLogs => GetCollection<DbAudit>();        
+        public IMongoCollection<DbClient> Clients => GetCollection<DbClient>();
+        public IMongoCollection<DbProject> Projects => GetCollection<DbProject>();
         public IMongoCollection<DbRole> Roles => GetCollection<DbRole>();
         public IMongoCollection<DbUser> Users => GetCollection<DbUser>();
-        public IMongoCollection<DbClient> Clients => GetCollection<DbClient>();
+        public IMongoCollection<DbWorkflow> Workflows => GetCollection<DbWorkflow>();
+        public IMongoCollection<DbWorkflowStep> WorkflowSteps => GetCollection<DbWorkflowStep>();
+        public IMongoCollection<DbWorkflowStepItem> WorkflowStepsItems => GetCollection<DbWorkflowStepItem>();
 
         public void Dispose() {
             this.Database = null;
@@ -40,9 +44,14 @@ namespace RecruitJr.DAL.MongoDB
 
         private Dictionary<Type, string> dbEntityToCollectionNameMappings = new Dictionary<Type, string>() {
             { typeof(DbAudit), Constants.Collections.AuditLogs },
+            { typeof(DbClient), Constants.Collections.Clients },
+            { typeof(DbProject), Constants.Collections.Projects },
             { typeof(DbRole), Constants.Collections.Roles },
             { typeof(DbUser), Constants.Collections.Users },
-            { typeof(DbClient), Constants.Collections.Clients }
+            { typeof(DbWorkflow), Constants.Collections.Workflows },
+            { typeof(DbWorkflowStep), Constants.Collections.WorkflowSteps },
+            { typeof(DbWorkflowStepItem), Constants.Collections.WorkflowStepItems }
+
         };
 
         private string GetCollectionName<TEntity>()

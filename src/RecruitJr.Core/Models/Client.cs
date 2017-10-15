@@ -12,8 +12,7 @@ namespace RecruitJr.Core.Models
         public string Name { get; set; }
         public string Code { get; set; }
 
-        // Settings are a dictionary to prevent model and database structure changing every time a new setting is added.
-        public IDictionary<string, string> Settings { get; set; }
+        public ClientSettings Settings { get; set; }
 
         public IEnumerable<string> Features { get; set; }
 

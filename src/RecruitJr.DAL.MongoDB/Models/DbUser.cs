@@ -9,7 +9,7 @@ namespace RecruitJr.DAL.MongoDB.Models
 {
     public class DbUser : DbRecordBase
     {
-        public string ClientId { get; set; }
+        public ObjectId ClientId { get; set; }
         public string Forename { get; set; }
         public string Surname { get; set; }
         public string Username { get; set; }
@@ -17,7 +17,7 @@ namespace RecruitJr.DAL.MongoDB.Models
         public bool EmailConfirmed { get; set; }
         public string PasswordHash { get; set; }
         public string Token { get; set; }
-        public IDictionary<string, string> Settings { get; set; }
+        public UserSettings Settings { get; set; }
         public IEnumerable<string> Roles { get; set; }
         /*
         [BsonRepresentation(BsonType.String)] 

@@ -163,7 +163,7 @@ namespace RecruitJr.DAL.MongoDB.Repositories
             var query = ctx.Users.AsQueryable();
 
             if (filter.ClientId.NotEmpty()) {
-                query = query.Where(x => x.ClientId == filter.ClientId);
+                query = query.Where(x => x.ClientId == ObjectId.Parse(filter.ClientId));
             }
 
             if (filter.Forename.NotEmpty()) {

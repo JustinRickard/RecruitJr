@@ -7,7 +7,7 @@ namespace RecruitJr.Core.Dto
         public string Name { get; set; }
         public string Code { get; set; }
         public string ParentCode { get; set; }
-        public IDictionary<string,string> Settings { get; set; }
+        public ClientSettings Settings { get; set; }
         public IEnumerable<string> Features { get; set; }
     }
 }

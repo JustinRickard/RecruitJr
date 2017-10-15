@@ -1,9 +1,10 @@
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace RecruitJr.Core.Dto
 {
     public class UserSettings
     {
-        public IEnumerable<string> Roles { get; set; }
+        public string CultureCode { get; set; }
     }
 }
