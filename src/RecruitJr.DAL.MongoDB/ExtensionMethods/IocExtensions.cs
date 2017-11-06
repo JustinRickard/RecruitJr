@@ -9,10 +9,13 @@ namespace RecruitJr.DAL.MongoDB.ExtensionMethods
     {
         public static void BindRepositoriesAsSingleton(this IServiceCollection serviceProvider) {
             serviceProvider
-                .AddTransient<IAuditRepository, AuditRepository>()
+                .AddSingleton<IAuditRepository, AuditRepository>()
                 .AddSingleton<IUserRepository, UserRepository>()
                 .AddSingleton<IClientRepository, ClientRepository>()
-                .AddSingleton<IProjectRepository, ProjectRepository>();
+                .AddSingleton<IProjectRepository, ProjectRepository>()
+                .AddSingleton<IWorkflowRepository, WorkflowRepository>()
+                .AddSingleton<IWorkflowStepRepository, WorkflowStepRepository>()
+                .AddSingleton<IWorkflowStepItemRepository, WorkflowStepItemRepository>();                
         }
 
         public static void BindRepositoriesAsTransient(this IServiceCollection serviceProvider) {
@@ -20,7 +23,10 @@ namespace RecruitJr.DAL.MongoDB.ExtensionMethods
                 .AddTransient<IAuditRepository, AuditRepository>()
                 .AddTransient<IUserRepository, UserRepository>()
                 .AddTransient<IClientRepository, ClientRepository>()
-                .AddTransient<IProjectRepository, ProjectRepository>();
+                .AddTransient<IProjectRepository, ProjectRepository>()                
+                .AddTransient<IWorkflowRepository, WorkflowRepository>()
+                .AddTransient<IWorkflowStepRepository, WorkflowStepRepository>()
+                .AddTransient<IWorkflowStepItemRepository, WorkflowStepItemRepository>();
         }
     }
 }

@@ -13,6 +13,9 @@ namespace RecruitJr.DB.Seed.Common
             public IClientRepository clientRepository;
             public IUserRepository userRepository;
             public IProjectRepository projectRepository;
+            public IWorkflowRepository workflowRepository;
+            public IWorkflowStepRepository workflowStepRepository;
+            public IWorkflowStepItemRepository workflowStepItemRepository;
             public IFileReader fileReader;
             public IJsonHelper jsonHelper;
             public AppSettings appSettings;
@@ -23,6 +26,9 @@ namespace RecruitJr.DB.Seed.Common
             IClientRepository clientRepository,
             IUserRepository userRepository,
             IProjectRepository projectRepository,
+            IWorkflowRepository workflowRepository,
+            IWorkflowStepRepository workflowStepRepository,
+            IWorkflowStepItemRepository workflowStepItemRepository,
             IFileReader fileReader,
             IJsonHelper jsonHelper,
             IOptions<AppSettings> appSettings,
@@ -32,6 +38,9 @@ namespace RecruitJr.DB.Seed.Common
             this.clientRepository = clientRepository;
             this.userRepository = userRepository;
             this.projectRepository = projectRepository;
+            this.workflowRepository = workflowRepository;
+            this.workflowStepRepository = workflowStepRepository;
+            this.workflowStepItemRepository = workflowStepItemRepository;
             this.fileReader = fileReader;
             this.jsonHelper = jsonHelper;
             this.appSettings = appSettings.Value;

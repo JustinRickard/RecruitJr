@@ -26,12 +26,12 @@ namespace RecruitJr.DAL.MongoDB.Repositories
             this.jsonHelper = jsonHelper;
         }
 
-        public new Task<Maybe<IWorkflowStepItem>> Add(IWorkflowStepItem item)
+        public Task<Maybe<IWorkflowStepItem>> Add(IWorkflowStepItem item)
         {
             throw new System.NotImplementedException();
         }
 
-        public new Task Delete(string id)
+        public Task Delete(string id)
         {
             throw new System.NotImplementedException();
         }
@@ -41,22 +41,27 @@ namespace RecruitJr.DAL.MongoDB.Repositories
             throw new System.NotImplementedException();
         }
 
-        public new Task<IEnumerable<IWorkflowStepItem>> GetAll()
+        public Task<IEnumerable<IWorkflowStepItem>> GetAll()
         {
             throw new System.NotImplementedException();
         }
 
-        public new Task<Maybe<IWorkflowStepItem>> GetById(string id)
+        public Task<Maybe<IWorkflowStepItem>> GetById(string id)
         {
             throw new System.NotImplementedException();
         }
 
-        public new Task Obliterate(string id)
+        public Task<Maybe<IWorkflowStepItem>> GetByCode(string code)
         {
             throw new System.NotImplementedException();
         }
 
-        public new Task<Maybe<IWorkflowStepItem>> Update(IWorkflowStepItem user)
+        public Task Obliterate(string id)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task<Maybe<IWorkflowStepItem>> Update(IWorkflowStepItem user)
         {
             throw new System.NotImplementedException();
         }

@@ -12,14 +12,20 @@ namespace RecruitJr.DB.Seed.Common
     {
         UserSeeder userSeeder;
         ClientSeeder clientSeeder;
+        ProjectSeeder projectSeeder;
+        WorkflowStepItemSeeder workflowStepItemSeeder;
 
         public Seeder(
             SeederDependencies dependencies,
             UserSeeder userSeeder,
-            ClientSeeder clientSeeder
+            ClientSeeder clientSeeder,
+            ProjectSeeder projectSeeder,
+            WorkflowStepItemSeeder workflowStepItemSeeder
         ): base(dependencies) {      
             this.userSeeder = userSeeder;
-            this.clientSeeder = clientSeeder;      
+            this.clientSeeder = clientSeeder;
+            this.projectSeeder = projectSeeder;
+            this.workflowStepItemSeeder = workflowStepItemSeeder;
         }        
 
         public void Run() {
@@ -28,6 +34,10 @@ namespace RecruitJr.DB.Seed.Common
 
             clientSeeder.Seed().Wait();
             userSeeder.Seed().Wait();
+            workflowStepItemSeeder.Seed().Wait();
+            // workflowStepSeeder.Seed().Wait();
+            // workflowSeeder.Seed().Wait();
+            projectSeeder.Seed().Wait();
 
             dependencies.logger.LogDebug("Seeding complete");
         }

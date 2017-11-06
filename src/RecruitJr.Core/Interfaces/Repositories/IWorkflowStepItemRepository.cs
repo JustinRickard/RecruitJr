@@ -6,7 +6,7 @@ using RecruitJr.Core.SearchFilters;
 
 namespace RecruitJr.Core.Interfaces.Repositories
 {
-    public interface IWorkflowStepItemRepository : IRepository<IWorkflowStepItem, WorkflowStepItemFilter>
+    public interface IWorkflowStepItemRepository : IRepository<IWorkflowStepItem, WorkflowStepItemFilter>, IRepositoryHasCode<IWorkflowStepItem>
     {
     }
 }

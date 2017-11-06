@@ -12,8 +12,6 @@ namespace RecruitJr.DB.Seed.Common
     {
         protected internal SeederDependencies dependencies;
 
-        protected internal string fileName;
-
         public SeederBase(
             SeederDependencies dependencies
         ) {
@@ -34,8 +32,8 @@ namespace RecruitJr.DB.Seed.Common
             }
         }       
 
-        protected internal T DeserializeFile<T>() {
-            var itemsResult = dependencies.jsonHelper.Deserialize<T>(GetFileContent());
+        protected internal T DeserializeFile<T>(string fileName) {
+            var itemsResult = dependencies.jsonHelper.Deserialize<T>(GetFileContent(fileName));
             if (itemsResult.IsFailure) {
                 throw new Exception("Could not deserialize file: " + fileName);
             }
@@ -43,10 +41,10 @@ namespace RecruitJr.DB.Seed.Common
             return itemsResult.Value;
         }
 
-        private string GetFileContent() 
+        private string GetFileContent(string filePath) 
         {
-            string filePath = Path.Combine(Directory.GetCurrentDirectory(), SeedFileDirectory, fileName);
-            return dependencies.fileReader.Read(filePath);
+            string fullPath = Path.Combine(Directory.GetCurrentDirectory(), SeedFileDirectory, filePath);
+            return dependencies.fileReader.Read(fullPath);
         }
 
     }

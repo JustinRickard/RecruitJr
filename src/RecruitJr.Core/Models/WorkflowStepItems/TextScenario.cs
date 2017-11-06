@@ -9,7 +9,6 @@ namespace RecruitJr.Core.Models.WorkflowStepItems
     {
         public WorkflowStepItemType ItemType { get => WorkflowStepItemType.TextScenario; }
 
-        public string BackgroundText { get; set; }
         public string ScenarioText { get; set; }
         public IEnumerable<Question> Questions { get; set; }
 

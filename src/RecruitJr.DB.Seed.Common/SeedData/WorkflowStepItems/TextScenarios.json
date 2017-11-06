@@ -1,0 +1,62 @@
+[
+    {
+        "ItemType": "TextScenario",
+        "Code": "ESQ_01",
+        "CompetencyCode": "WORKING_WITH_PEOPLE",
+        "ScenarioText": "The supermarket sells everything including bread, which is in the bread aisle. They do not provide cashback. There is an ATM machine just outside. You are stacking shelves and are approached by sevearl customers.",
+        "Questions": [
+          {
+            "Code": "ESQ_01_Q_01",            
+            "Text": "Why don't you sell bread? This is ridiculous!!!",
+            "Responses": [
+              {
+                "Code": "ESQ_01_Q_01_R_01",
+                "Text": "Dunno!",
+                "Score": 1
+              },
+              {
+                "Code": "ESQ_01_Q_01_R_02",
+                "Text": "Ask someone else.",
+                "Score": 2
+              },
+              {
+                "Code": "ESQ_01_Q_01_R_03",
+                "Text": "We do, it's over there.",
+                "Score": 3
+              },
+              {
+                "Code": "ESQ_01_Q_01_R_04",
+                "Text": "We do sell bread. I will take you to the break isle. Please follow me.",
+                "Score": 4
+              }
+            ]
+          },
+          {
+            "Code": "ESQ_01_Q_02",
+            "Text": "Could I have £20 cashback please?",
+            "Responses": [
+              {
+                "Code": "ESQ_01_Q_02_R_01",
+                "Text": "Yes, of course.",
+                "Score": 1
+              },
+              {
+                "Code": "ESQ_01_Q_02_R_02",
+                "Text": "No.",
+                "Score": 2
+              },
+              {
+                "Code": "ESQ_01_Q_02_R_03",
+                "Text": "I'm afraid we don't do cashback, sorry.",
+                "Score": 3
+              },
+              {
+                "Code": "ESQ_01_Q_02_R_04",
+                "Text": "I'm afraid we don't do cashback, sorry. There is an ATM outside which you may use to get cash out.",
+                "Score": 4
+              }
+            ]
+          }
+        ]
+    }
+]

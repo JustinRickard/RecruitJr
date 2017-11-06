@@ -18,17 +18,18 @@ namespace RecruitJr.DB.Seed.Common.Seeders
 {
     public class UserSeeder : SeederBase, ISeeder
     {
+        private static string fileName = "Users.json";
+
         public UserSeeder(
             SeederDependencies dependencies
         ): base(dependencies) {
-            this.fileName = "Users.json";
         }        
 
         public async Task<Result> Seed()
         {
             dependencies.logger.LogDebug("Seeding user data...");
 
-            var users = DeserializeFile<IEnumerable<SeedUserAddDto>>();
+            var users = DeserializeFile<IEnumerable<SeedUserAddDto>>(fileName);
 
             foreach(var userDto in users) 
             {

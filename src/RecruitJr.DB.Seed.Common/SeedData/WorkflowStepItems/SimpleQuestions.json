@@ -1,0 +1,58 @@
+[
+    {
+        "ItemType": "SimpleQuestion",
+        "Code": "EPT_01",
+        "CompetencyCode": "WORKS_QUICKLY",
+        "Text": "I like to work quickly",
+        "Options": [
+          {
+            "Code": "EPT_01_R_01",
+            "Text": "Strongly disagree",
+            "Score": 1
+          },
+          {
+            "Code": "EPT_01_R_01",
+            "Text": "Disagree",
+            "Score": 2
+          },
+          {
+            "Code": "EPT_01_R_01",
+            "Text": "Agree",
+            "Score": 3
+          },
+          {
+            "Code": "EPT_01_R_01",
+            "Text": "Strongly agree",
+            "Score": 4
+          }
+        ]
+      },
+      {
+        "ItemType": "SimpleQuestion",
+        "Code": "EPT_02",
+        "CompetencyCode": "ATTENTION_TO_DETAIL",
+        "Text": "I pay attention to detail",
+        "Options": [
+          {
+            "Code": "EPT_02_R_01",
+            "Text": "Strongly disagree",
+            "Score": 1
+          },
+          {
+            "Code": "EPT_02_R_01",
+            "Text": "Disagree",
+            "Score": 2
+          },
+          {
+            "Code": "EPT_02_R_01",
+            "Text": "Agree",
+            "Score": 3
+          },
+          {
+            "Code": "EPT_02_R_01",
+            "Text": "Strongly agree",
+            "Score": 4
+          }
+        ]
+    }
+]
