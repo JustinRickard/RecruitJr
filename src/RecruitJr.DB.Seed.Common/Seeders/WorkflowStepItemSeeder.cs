@@ -6,6 +6,7 @@ using RecruitJr.Core.Dto;
 using RecruitJr.Core.Enums.WorkflowSteps;
 using RecruitJr.Core.ExtensionMethods;
 using RecruitJr.Core.Interfaces.Models;
+using RecruitJr.Core.Models;
 using RecruitJr.DB.Seed.Common.Interfaces;
 
 namespace RecruitJr.DB.Seed.Common.Seeders
@@ -43,8 +44,8 @@ namespace RecruitJr.DB.Seed.Common.Seeders
                 if (!canAdd) {
                     dependencies.logger.LogDebug(string.Format("Cannot add question: {0}", q.Code));
                 } else {
-                    var competencyId = ""; // TODO: Get from competency repository
-                    await dependencies.workflowStepItemRepository.Add(q.ToModel(competencyId));
+                    var competency = new Competency(); // TODO: Get competency
+                    await dependencies.workflowStepItemRepository.Add(q.ToModel(competency));
                 }                
             }
 
@@ -58,8 +59,8 @@ namespace RecruitJr.DB.Seed.Common.Seeders
                 if (!canAdd) {
                     dependencies.logger.LogDebug(string.Format("Cannot add question: {0}", q.Code));
                 } else {
-                    var competencyId = ""; // TODO: Get from competency repository
-                    await dependencies.workflowStepItemRepository.Add(q.ToModel(competencyId));
+                    var competency = new Competency(); // TODO: Get competency
+                    await dependencies.workflowStepItemRepository.Add(q.ToModel(competency));
                 }                
             }
 

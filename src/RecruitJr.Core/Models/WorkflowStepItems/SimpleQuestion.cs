@@ -5,8 +5,7 @@ namespace RecruitJr.Core.Models.WorkflowStepItems
 {
     public class SimpleQuestion : WorkflowStepItemBase, IWorkflowStepItem
     {
-        public WorkflowStepItemType ItemType { get => WorkflowStepItemType.SimpleQuestion; }
-
+        public WorkflowStepItemType ItemType { get => WorkflowStepItemType.SimpleQuestion; }        
         public Question Question { get; set; }
     }
 }

@@ -5,10 +5,8 @@ using RecruitJr.Core.Dto;
 
 namespace RecruitJr.Core.Models
 {
-    public class Project : DbRecordBase
+    public class Project : DbRecordBaseWithNameAndCode
     {
-        public string Name { get; set; }
-        public string Code { get; set; }
         public string WorkflowId { get; set; }
         public DateTimeOffset StartTime { get; set; }
         public DateTimeOffset EndTime { get; set; }

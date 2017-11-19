@@ -5,10 +5,8 @@ using RecruitJr.Core.Interfaces.Models;
 
 namespace RecruitJr.Core.Models
 {
-    public class WorkflowStep : DbRecordBase, IHasCode, IHasName
+    public class WorkflowStep : DbRecordBaseWithNameAndCode
     {
-        public string Code { get; set; }
-        public string Name { get; set; }
         public IEnumerable<IWorkflowStepItem> Items { get; set; }
         
     }

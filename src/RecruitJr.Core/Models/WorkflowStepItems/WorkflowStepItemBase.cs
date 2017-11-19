@@ -7,6 +7,6 @@ namespace RecruitJr.Core.Models.WorkflowStepItems
     {
         public string CultureCode { get; set; }
         public string Code { get; set; }
-        public string CompetencyId { get; set; }
+        public Competency Competency { get; set; }
     }
 }
