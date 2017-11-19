@@ -1,0 +1,16 @@
+[
+  {
+    "Code": "EX_STAGE1_PERS",
+    "Name": "Stage 1- Personality Test",
+    "WorkflowSteps": [
+      {
+        "Code": "EX_STEP_SMPL",
+        "Order": 1
+      },
+      {
+        "Code": "EX_STEP_SCEN",
+        "Order": 2
+      }
+    ]
+  }
+]

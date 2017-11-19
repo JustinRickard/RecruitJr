@@ -1,7 +1,7 @@
 [
   {
     "StepType": "SimpleQuestionnaire",
-    "Code": "EX_SMPL",
+    "Code": "EX_STEP_SMPL",
     "Name": "Example Simple Questionnaire",
     "WorkflowStepCodes": [
         "EPT_01",
@@ -11,7 +11,7 @@
   {
     "StepType": "ScenarioQuestionnaire",
     "Name": "Example Scenario Questionnaire",
-    "Code": "EX_SCEN",
+    "Code": "EX_STEP_SCEN",
     "WorkflowStepCodes": [
         "ESQ_01"
     ]
