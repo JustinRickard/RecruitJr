@@ -3,10 +3,8 @@ using RecruitJr.Core.Interfaces.Common;
 
 namespace RecruitJr.Core.SearchFilters
 {
-    public class WorkflowStepItemFilter : IHasCode, IHasName
-    {        
-        public string Code { get; set; }
-        public string Name { get; set; }
+    public class WorkflowStepItemFilter : WorkflowSearchFilterBase
+    {
         public WorkflowStepItemType ItemType { get; set; }
     }
 }

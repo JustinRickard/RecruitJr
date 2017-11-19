@@ -2,10 +2,8 @@ using System;
 
 namespace RecruitJr.Core.SearchFilters
 {
-    public class ProjectFilter
+    public class ProjectFilter : WorkflowSearchFilterBase
     {
-        public string Name { get; set; }
-        public string Code { get; set; }
         public string WorkflowId { get; set; }
         public DateTimeOffset StartTimeBefore { get; set; }
         public DateTimeOffset StartTimeAfter { get; set; }

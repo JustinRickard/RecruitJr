@@ -14,8 +14,9 @@ using System;
 using RecruitJr.Core.Interfaces.Repositories;
 using RecruitJr.DAL.MongoDB.Models;
 using RecruitJr.Core.Enums;
+using DbRecordBase = RecruitJr.DAL.MongoDB.Models.DbRecordBase;
 
-namespace RecruitJr.DAL.MongoDB
+namespace RecruitJr.DAL.MongoDB.Repositories
 {
     public class RepositoryBase
     {

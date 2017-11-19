@@ -6,6 +6,7 @@ namespace RecruitJr.DAL.MongoDB
             public const string AuditLogs = "logs_audit";
             public const string ErrorLogs = "logs_error";
             public const string Clients = "clients";
+            public const string Competencies = "Competencies";
             public const string Roles = "roles";
             public const string Users = "users";
             public const string Participants = "participants";

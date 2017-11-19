@@ -31,6 +31,7 @@ namespace RecruitJr.DAL.MongoDB
 
         public IMongoCollection<DbAudit> AuditLogs => GetCollection<DbAudit>();        
         public IMongoCollection<DbClient> Clients => GetCollection<DbClient>();
+        public IMongoCollection<DbCompetency> Competencies => GetCollection<DbCompetency>();
         public IMongoCollection<DbProject> Projects => GetCollection<DbProject>();
         public IMongoCollection<DbRole> Roles => GetCollection<DbRole>();
         public IMongoCollection<DbUser> Users => GetCollection<DbUser>();
@@ -44,6 +45,7 @@ namespace RecruitJr.DAL.MongoDB
 
         private Dictionary<Type, string> dbEntityToCollectionNameMappings = new Dictionary<Type, string>() {
             { typeof(DbAudit), Constants.Collections.AuditLogs },
+            { typeof(DbCompetency), Constants.Collections.Competencies },
             { typeof(DbClient), Constants.Collections.Clients },
             { typeof(DbProject), Constants.Collections.Projects },
             { typeof(DbRole), Constants.Collections.Roles },
