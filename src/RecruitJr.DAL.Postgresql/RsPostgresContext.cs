@@ -15,7 +15,7 @@ namespace RecruitJr.DAL.Postgresql
 
         }
 
-        public DbSet<User> Users { get; set; }  
-        public DbSet<Client> Clients { get; set; }  
+        public DbSet<DbUser> Users { get; set; }  
+        public DbSet<DbClient> Clients { get; set; }  
     }
 }

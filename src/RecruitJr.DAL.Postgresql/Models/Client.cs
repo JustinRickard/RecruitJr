@@ -1,6 +1,6 @@
 namespace RecruitJr.DAL.Postgresql.Models
 {
-    public class Client : DbModelBase
+    public class DbClient : DbModelBase
     {
         public string Name { get; set; }
     }

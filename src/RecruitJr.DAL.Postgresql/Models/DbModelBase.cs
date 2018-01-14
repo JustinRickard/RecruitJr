@@ -9,9 +9,9 @@ namespace RecruitJr.DAL.Postgresql.Models
         [Key]
         public Guid Id { get; set; }
 
-        public bool IsDeleted { get; set; }
+        public bool Deleted { get; set; }
 
-        public DateTimeOffset DateAdded { get; set; }
+        public DateTimeOffset DateCreated { get; set; }
 
         public DateTimeOffset LastModified { get; set; }        
     }
