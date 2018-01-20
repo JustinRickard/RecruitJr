@@ -12,7 +12,6 @@ namespace RecruitJr.DAL.Postgresql
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
-
         }
 
         public DbSet<DbUser> Users { get; set; }  

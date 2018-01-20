@@ -1,3 +1,4 @@
+using System;
 using RecruitJr.Core.Models;
 using RecruitJr.DAL.Postgresql.Models;
 
@@ -18,5 +19,14 @@ namespace RecruitJr.DAL.Postgresql.Conversions
             };
         }
         
+        public static DbClient ToDb(this Client client) {
+            if (client == null) return null;
+
+            return new DbClient {
+                Id = Guid.Parse(client.Id), // TODO: add logic for when it is not a Guid.
+                Name = client.Name,
+                Code = client.Code,
+            };
+        }
     }
 }

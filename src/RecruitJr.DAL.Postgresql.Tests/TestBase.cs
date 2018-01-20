@@ -1,23 +1,24 @@
+using System;
+using RecruitJr.Core;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Abstractions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace RecruitJr.DAL.Postgresql.Tests
 {
     public class TestBase
     {
-        protected RsPostgresContext ctx;
+        protected ServiceProvider serviceProvider;
 
         [TestInitialize]
         public void TestInitialize() {
-            var optionsBuilder = new DbContextOptionsBuilder();
-            optionsBuilder.UseInMemoryDatabase("Test");
-            var options = optionsBuilder.Options;
-            ctx = new RsPostgresContext(options);
+            serviceProvider = ConfigurationHelper.BuildServiceProvider();
         }
 
         [TestCleanup]
         public void TestCleanup() {
-            ctx = null;
-        }
+            serviceProvider = null;
+        }        
     }
 }
